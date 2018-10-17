@@ -31,6 +31,7 @@ public class UserProfilePage extends AppCompatActivity implements View.OnClickLi
     private String userID;
     private TextView textViewName;
     private ListView mListView;
+    private ImageView imgView;
     //public DynamicLink profLink;
 
     Button uploadPic;
@@ -47,6 +48,7 @@ public class UserProfilePage extends AppCompatActivity implements View.OnClickLi
 
         mListView = (ListView) findViewById(R.id.listview);
         textViewName = (TextView) findViewById(R.id.textViewName);
+        findViewById(R.id.imageView6).setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -55,6 +57,7 @@ public class UserProfilePage extends AppCompatActivity implements View.OnClickLi
         userID = user.getUid();
 
         System.out.println("USER ID: " + userID);
+        findViewById(R.id.uploadPic).setOnClickListener(this);
 
         findViewById(R.id.uploadPic).setOnClickListener(this);
 
@@ -91,6 +94,7 @@ public class UserProfilePage extends AppCompatActivity implements View.OnClickLi
             array.add(uInfo.getEmail());
 
             ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,array);
+
             mListView.setAdapter(adapter);
             textViewName.setText(uInfo.getUserName());
 
@@ -101,8 +105,105 @@ public class UserProfilePage extends AppCompatActivity implements View.OnClickLi
         switch (view.getId()) {
             case R.id.uploadPic:
                 startActivity(new Intent(this, SendNfcIntent.class));
-                break;
+            case R.id.imageView6:
+                startActivity(new Intent(this, HomePageActivity.class));
         }
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

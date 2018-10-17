@@ -11,7 +11,10 @@ public class UserInformation {
 
     public UserInformation(String userName, String id, String phone, String email) {
         this.userName = userName;
+<<<<<<< HEAD
         this.userID = id;
+=======
+>>>>>>> a2321180e0ee00ffb50254da1cc4a603056cce13
         this.phone = phone;
         this.email = email;
     }
